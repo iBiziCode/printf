@@ -69,7 +69,10 @@ int _printf(const char *format, ...)
 			else if (*format == '%')
 				count += write(1, "%", 1);
 			else
-				count += write(1, "%r", 2);
+			{
+				count += write(1, "%", 1);
+				count += write(1, format, 1);
+			}
 		}
 		else
 		{
