@@ -53,7 +53,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	if (!format || (format[0] == '%' && format[1] == '\0'))
+	if (!format)
 		return (-1);
 
 	for (; *format; format++)
