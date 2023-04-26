@@ -61,7 +61,7 @@ int print_int(va_list args)
 	int n = va_arg(args, long int);
 	int len = 0;
 
-	if(n == 0)
+	if (n == 0)
 	{
 		write(1, "0", 1);
 		return (1);

@@ -13,7 +13,8 @@ int handle_printing(const char *fmt, va_list args)
 
 	fmt_t fmt_spec[] = {
 		{'c', print_char}, {'s', print_string}, {'%', print_percent},
-		{'d', print_int}, {'i', print_int}, {'\0', NULL}
+		{'d', print_int}, {'i', print_int}, {'b', print_binary},
+		{'\0', NULL}
 	};
 
 	for (i = 0; fmt_spec[i].fmt != '\0'; i++)
