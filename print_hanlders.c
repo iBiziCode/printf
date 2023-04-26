@@ -13,6 +13,18 @@ int print_char(va_list args)
 	return (write(1, &c, 1));
 }
 
+/**
+  * print_percent - prints a percentage sign
+  * @args: va_list containing the character to print
+  *
+  * Return: 1
+  */
+int print_percent(va_list args)
+{
+	UNUSED(args);
+	return (write(1, "%", 1));
+}
+
 
 /**
  * print_string - prints a string
@@ -24,6 +36,9 @@ int print_string(va_list args)
 {
 	char *s = va_arg(args, char *);
 	int len = 0;
+
+	if (s == NULL)
+		s = "(null)";
 
 	while (*s)
 	{

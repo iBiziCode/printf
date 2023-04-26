@@ -12,20 +12,15 @@ int handle_printing(const char *fmt, va_list args)
 	int count = 0, i;
 
 	fmt_t fmt_spec[] = {
-		{'c', print_char}, {'s', print_string},
+		{'c', print_char}, {'s', print_string}, {'%', print_percent},
 		{'d', print_int}, {'i', print_int}, {'\0', NULL}
 	};
 
 	for (i = 0; fmt_spec[i].fmt != '\0'; i++)
 		if (*fmt == fmt_spec[i].fmt)
 			return (fmt_spec[i].f(args));
-	if (*fmt == '%')
-		count += write(1, "%", 1);
-	else
-	{
-		count += write(1, "%", 1);
-		count += write(1, fmt, 1);
-	}
+	count += write(1, "%", 1);
+	count += write(1, fmt, 1);
 
 	return (count);
 }

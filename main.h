@@ -23,6 +23,7 @@ typedef struct fmt
 
 /****************** Print_handlers **************/
 int _putchar(char c);
+int print_percent(va_list args);
 int print_char(va_list args);
 int print_string(va_list args);
 int print_int_helper(int n);
