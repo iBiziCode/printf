@@ -19,7 +19,6 @@ int handle_printing(const char *fmt, va_list args)
 	for (i = 0; fmt_spec[i].fmt != '\0'; i++)
 		if (*fmt == fmt_spec[i].fmt)
 			return (fmt_spec[i].f(args));
-	
 	if (*fmt == '%')
 		count += write(1, "%", 1);
 	else
@@ -57,7 +56,6 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == '\0')
 				return (-1);
-			
 			count += handle_printing(format, args);
 		}
 		else
