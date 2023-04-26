@@ -29,6 +29,7 @@ int print_binary(va_list args);
 int print_string(va_list args);
 int print_int_helper(long int n);
 int print_int(va_list args);
+int print_reverse(va_list args);
 int handle_printing(const char *fmt, va_list args);
 int _printf(const char *format, ...);
 

@@ -25,3 +25,30 @@ int print_binary(va_list args)
 
 	return (len);
 }
+
+/**
+ * _print_reverse - print a string in reverse
+ * @args: the string to print in reverse
+ *
+ * Return: length of string printed
+ */
+int print_reverse(va_list args)
+{
+	char *s = va_arg(args, char *);
+	int len = 0;
+
+	if (s)
+	{
+		char *t = s;
+
+		while (*t)
+		{
+			t++;
+			len++;
+		}
+		while (s < t--)
+			_putchar(*t);
+		_putchar('\n')
+	}
+	return (len);
+}
