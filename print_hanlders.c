@@ -58,8 +58,14 @@ int print_string(va_list args)
  */
 int print_int(va_list args)
 {
-	int n = va_arg(args, int);
+	int n = va_arg(args, long int);
 	int len = 0;
+
+	if(n == 0)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
 
 	if (n < 0)
 	{
@@ -81,7 +87,7 @@ int print_int(va_list args)
  *
  * Return: number of characters printed
  */
-int print_int_helper(int n)
+int print_int_helper(long int n)
 {
 	int len = 0;
 
