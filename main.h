@@ -18,7 +18,7 @@ typedef struct fmt
 {
 	char fmt;
 	int (*f)(va_list);
-}fmt_t;
+} fmt_t;
 
 
 /****************** Print_handlers **************/
