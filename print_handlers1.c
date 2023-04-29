@@ -48,7 +48,6 @@ int print_reverse(va_list args)
 		}
 		while (s < t--)
 			_putchar(*t);
-		_putchar('\n');
 	}
 	return (len);
 }
