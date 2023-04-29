@@ -65,8 +65,6 @@ int rot13(va_list args)
 	char *str = va_arg(args, char *);
 	int len = 0;
 
-	printf("string received: %s\n", str);
-
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		c = str[i];
@@ -81,5 +79,5 @@ int rot13(va_list args)
 		_putchar(c);
 		len++;
 	}
-	return (len - 1);
+	return (len);
 }
