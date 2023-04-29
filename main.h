@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <limits.h>
 /****************** Constants *******************/
 #define UNUSED(x) (void)(x)
 /****************** Structures ******************/
@@ -27,7 +28,8 @@ int print_percent(va_list args);
 int print_char(va_list args);
 int print_binary(va_list args);
 int print_string(va_list args);
-int print_int_helper(long int n);
+int print_int_helper(unsigned long int n);
+int rot13(va_list args);
 int print_int(va_list args);
 int print_reverse(va_list args);
 int handle_printing(const char *fmt, va_list args);

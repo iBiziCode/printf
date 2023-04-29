@@ -60,23 +60,25 @@ int print_int(va_list args)
 {
 	int n = va_arg(args, long int);
 	int len = 0;
+	unsigned long int num;
 
 	if (n == 0)
 	{
 		write(1, "0", 1);
 		return (1);
 	}
+	num = (unsigned long int)n;
 
 	if (n < 0)
 	{
 		len += write(1, "-", 1);
-		n = -n;
+		num = -num;
 	}
 
-	if (n / 10)
-		len += print_int_helper(n / 10);
+	if (num / 10)
+		len += print_int_helper(num / 10);
 
-	len += write(1, &"0123456789"[n % 10], 1);
+	len += write(1, &"0123456789"[num % 10], 1);
 
 	return (len);
 }
@@ -87,7 +89,7 @@ int print_int(va_list args)
  *
  * Return: number of characters printed
  */
-int print_int_helper(long int n)
+int print_int_helper(unsigned long int n)
 {
 	int len = 0;
 

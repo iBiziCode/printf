@@ -27,7 +27,7 @@ int print_binary(va_list args)
 }
 
 /**
- * _print_reverse - print a string in reverse
+ * print_reverse - print a string in reverse
  * @args: the string to print in reverse
  *
  * Return: length of string printed
@@ -51,4 +51,34 @@ int print_reverse(va_list args)
 		_putchar('\n');
 	}
 	return (len);
+}
+
+/**
+ * rot13 - performs the ROT13 transformation on a string and returns its length
+ * @args: the string to be transformed
+ *
+ * Return: the length of the transformed string
+ */
+int rot13(va_list args)
+{
+	int i;
+	char c;
+	char *str = va_arg(args, char *);
+	int len = 0;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		c = str[i];
+		if ((c >= 'A' && c <= 'M') || (c >= 'a' && c <= 'm'))
+		{
+			c += 13;
+		}
+		else if ((c >= 'N' && c <= 'Z') || (c >= 'n' && c <= 'z'))
+		{
+			c -= 13;
+		}
+		_putchar(c);
+		len++;
+	}
+	return (len - 1);
 }
